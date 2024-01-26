@@ -68,6 +68,16 @@ public class Candidato {
         this.tecnologias = tecnologias;
     }
 
+    @Override
+    public String toString() {
+        return "Candidato: \n" +
+                "id=" + id +
+                ", nombre='" + nombre +
+                ", apellido='" + apellido +
+                ", pretensionSalarial=" + pretensionSalarial +
+                ", aniosExperiencia=" + aniosExperiencia +
+                ", tecnologias=" + tecnologias;
+    }
 
 
 
