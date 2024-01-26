@@ -47,4 +47,7 @@ public class Tecnologia {
                 ", nombre= " + nombre;
     }
 
+    public boolean idPar() {
+        return this.id % 2 == 0;
+    }
 }
