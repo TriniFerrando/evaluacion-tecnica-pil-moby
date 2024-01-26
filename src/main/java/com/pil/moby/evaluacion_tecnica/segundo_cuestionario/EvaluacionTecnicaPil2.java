@@ -9,6 +9,7 @@ import java.util.List;
 public class EvaluacionTecnicaPil2 {
     public static void main(String[] args) {
         List<Candidato> listaCandidatos =inicializarCandidatos();
+        resolverPunto1(listaCandidatos);
     }
 
     public static List<Candidato> inicializarCandidatos() {
@@ -48,5 +49,9 @@ public class EvaluacionTecnicaPil2 {
         return candidatos;
 
     }
-
+    public static void resolverPunto1(List<Candidato> candidatoList){
+        for (Candidato candidato : candidatoList) {
+            System.out.println(candidato);
+        }
+    }
 }
