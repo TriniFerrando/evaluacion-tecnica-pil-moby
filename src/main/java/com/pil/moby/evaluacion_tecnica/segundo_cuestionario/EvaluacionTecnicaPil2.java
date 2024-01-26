@@ -4,6 +4,7 @@ import main.java.com.pil.moby.evaluacion_tecnica.pojo.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,6 +13,7 @@ public class EvaluacionTecnicaPil2 {
         List<Candidato> listaCandidatos =inicializarCandidatos();
         resolverPunto1(listaCandidatos);
         resolverPunto2(listaCandidatos);
+        resolverPunto3(listaCandidatos);
     }
 
     public static List<Candidato> inicializarCandidatos() {
@@ -64,6 +66,11 @@ public class EvaluacionTecnicaPil2 {
         }
     }
 
-
+    public static void resolverPunto3(List<Candidato> listaCandidatos) {
+        List<Candidato> listaCandidatosOrdenados = listaCandidatos.stream().sorted(Comparator.comparing(Candidato::getPretensionSalarial).reversed()).collect(Collectors.toList());
+        for (Candidato candidato : listaCandidatosOrdenados) {
+            System.out.println(candidato.getPretensionSalarial() + " - " + candidato.getNombre() + " " + candidato.getApellido());
+        }
+    }
 
 }
