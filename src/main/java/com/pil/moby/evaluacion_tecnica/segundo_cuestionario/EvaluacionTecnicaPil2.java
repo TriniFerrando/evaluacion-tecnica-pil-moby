@@ -5,11 +5,13 @@ import main.java.com.pil.moby.evaluacion_tecnica.pojo.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EvaluacionTecnicaPil2 {
     public static void main(String[] args) {
         List<Candidato> listaCandidatos =inicializarCandidatos();
         resolverPunto1(listaCandidatos);
+        resolverPunto2(listaCandidatos);
     }
 
     public static List<Candidato> inicializarCandidatos() {
@@ -55,6 +57,12 @@ public class EvaluacionTecnicaPil2 {
         }
     }
 
+    public static void resolverPunto2(List<Candidato> listaCandidatos) {
+        List<Candidato> listaCandidatosOrdenados = listaCandidatos.stream().sorted().collect(Collectors.toList());
+        for (Candidato candidato : listaCandidatosOrdenados) {
+            System.out.println(candidato.getId() + " - " + candidato.getNombre() + " " + candidato.getApellido());
+        }
+    }
 
 
 
