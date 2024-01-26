@@ -40,5 +40,11 @@ public class Tecnologia {
         return Objects.hash(getId(), getNombre());
     }
 
+    @Override
+    public String toString() {
+        return "Tecnologia:\t" +
+                "id= " + id +
+                ", nombre= " + nombre;
+    }
 
 }
