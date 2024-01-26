@@ -1,3 +1,5 @@
+package main.java.com.pil.moby.evaluacion_tecnica.primer_cuestionario;
+
 //Primera Evaluación (mes 1)
 public class EvaluacionTecnicaPil {
     public static void main(String[] args) {
