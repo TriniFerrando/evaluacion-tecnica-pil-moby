@@ -1,5 +1,7 @@
 package main.java.com.pil.moby.evaluacion_tecnica.pojo;
 
+import java.util.Objects;
+
 public class Tecnologia {
     private Long id;
     private String nombre;
@@ -24,6 +26,18 @@ public class Tecnologia {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tecnologia that)) return false;
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getNombre(), that.getNombre());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getNombre());
     }
 
 
