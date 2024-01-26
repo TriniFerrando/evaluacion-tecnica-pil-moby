@@ -1,5 +1,7 @@
 package main.java.com.pil.moby.evaluacion_tecnica.pojo;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Candidato implements Comparable<Candidato>{
@@ -81,6 +83,10 @@ public class Candidato implements Comparable<Candidato>{
 
     public int compareTo(Candidato o) {
         return this.id.compareTo(o.id);
+    }
+    public List<Tecnologia> ordenarTecnologias() {
+        Collections.sort(this.tecnologias, Comparator.comparing(Tecnologia::getNombre));
+        return this.tecnologias;
     }
 
 }
