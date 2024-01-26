@@ -12,6 +12,7 @@ public class EvaluacionTecnicaPil2 {
         resolverPunto2(listaCandidatos);
         resolverPunto3(listaCandidatos);
         resolverPunto4(listaCandidatos);
+        resolverPunto5(listaCandidatos);
     }
 
     public static List<Candidato> inicializarCandidatos() {
@@ -83,6 +84,17 @@ public class EvaluacionTecnicaPil2 {
             for (Tecnologia tecnologia : listaTecnologiasOrdenados) {
                 System.out.println(tecnologia);
             }
+        }
+    }
+
+    public static void resolverPunto5(List<Candidato> listaCandidatos) {
+        Optional<Candidato> candidatoConMasTecnologias = listaCandidatos.stream().max(Comparator.comparingInt(c -> c.getTecnologias().size()));
+        if (candidatoConMasTecnologias.isPresent()) {
+            Candidato candidato = candidatoConMasTecnologias.get();
+            System.out.println(candidato);
+
+            Optional<Tecnologia> tecnologiaConIdPar = candidato.getTecnologias().stream().filter(Tecnologia::idPar).findFirst();
+            tecnologiaConIdPar.ifPresent(System.out::println);
         }
     }
 }
