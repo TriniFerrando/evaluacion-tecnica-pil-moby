@@ -7,11 +7,22 @@ import java.util.stream.Collectors;
 
 public class EvaluacionTecnicaPil2 {
     public static void main(String[] args) {
+        imprimirBienvenidaEvaluacionTecnica();
+
+        imprimirMensajePunto(1);
         List<Candidato> listaCandidatos =inicializarCandidatos();
         resolverPunto1(listaCandidatos);
+
+        imprimirMensajePunto(2);
         resolverPunto2(listaCandidatos);
+
+        imprimirMensajePunto(3);
         resolverPunto3(listaCandidatos);
+
+        imprimirMensajePunto(4);
         resolverPunto4(listaCandidatos);
+
+        imprimirMensajePunto(5);
         resolverPunto5(listaCandidatos);
     }
 
@@ -72,18 +83,12 @@ public class EvaluacionTecnicaPil2 {
         }
     }
 
-
     public static void resolverPunto4(List<Candidato> listaCandidatos) {
         Optional<Candidato> candidatoConMasExperiencia = listaCandidatos.stream().max(Comparator.comparingInt(Candidato::getAniosExperiencia));
 
         if (candidatoConMasExperiencia.isPresent()) {
             Candidato candidato = candidatoConMasExperiencia.get();
             System.out.println(candidato);
-
-            List<Tecnologia> listaTecnologiasOrdenados = candidato.ordenarTecnologias();
-            for (Tecnologia tecnologia : listaTecnologiasOrdenados) {
-                System.out.println(tecnologia);
-            }
         }
     }
 
@@ -92,9 +97,20 @@ public class EvaluacionTecnicaPil2 {
         if (candidatoConMasTecnologias.isPresent()) {
             Candidato candidato = candidatoConMasTecnologias.get();
             System.out.println(candidato);
-
-            Optional<Tecnologia> tecnologiaConIdPar = candidato.getTecnologias().stream().filter(Tecnologia::idPar).findFirst();
-            tecnologiaConIdPar.ifPresent(System.out::println);
         }
     }
+
+    private static void imprimirBienvenidaEvaluacionTecnica() {
+        System.out.println("\n*******************************************");
+        System.out.println("Bienvenidos a la segunda Evaluacion Tecnica." + "\n" +
+                "Les deseamos muchos Exitos!");
+        System.out.println("*******************************************\n");
+    }
+
+    private static void imprimirMensajePunto(int numeroPunto) {
+        System.out.println("\n*******");
+        System.out.println("PUNTO " + numeroPunto);
+        System.out.println("*******\n");
+    }
+
 }

@@ -74,8 +74,8 @@ public class Candidato implements Comparable<Candidato>{
     public String toString() {
         return "Candidato: \n" +
                 "id=" + id +
-                ", nombre='" + nombre +
-                ", apellido='" + apellido +
+                ", nombre=" + nombre +
+                ", apellido=" + apellido +
                 ", pretensionSalarial=" + pretensionSalarial +
                 ", aniosExperiencia=" + aniosExperiencia +
                 ", tecnologias=" + tecnologias;

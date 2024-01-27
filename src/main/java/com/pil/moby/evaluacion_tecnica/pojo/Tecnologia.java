@@ -42,9 +42,9 @@ public class Tecnologia {
 
     @Override
     public String toString() {
-        return "Tecnologia:\t" +
-                "id= " + id +
-                ", nombre= " + nombre;
+        return "\nTecnologia:" +
+                "id=" + id +
+                ", nombre=" + nombre;
     }
 
     public boolean idPar() {
